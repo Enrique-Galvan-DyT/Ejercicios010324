@@ -1,0 +1,70 @@
+@import url('/Ejercicios010324/public/css/bootstrap/dist/css/bootstrap.css');
+
+ul.lista-padre{
+    li{
+        &:hover{
+            color: red;
+            a:hover{
+                color: yellowgreen;
+            }
+        }
+    }
+}
+
+/*
+Inicio de la clase declarada
+
+Agrega estilos restantes, no puedes salir de esta declaración para añadir más estilos
+*/
+ul.biome-list{
+    padding: 0;
+    list-style: none;
+    
+    /*Dentro de el elemento ul con clase biome-list hay una clase biome*/
+    .biome{
+        margin: auto;
+        background-color: aliceblue;
+        border: 2px solid lavender;
+        
+        /*Dentro de el elemento ul con clase biome-list hay una clase biome que a su vez contiene una clase biome-background*/
+        .biome-background{
+            width: 100%;
+            height: 10rem;
+            background-repeat: no-repeat;
+            background-position-y: 40%;
+            background-size: inherit;  
+            display: flex;
+            align-items: center;
+
+            /*Dentro de el elemento ul con clase biome-list hay una clase biome que a su vez contiene una clase biome-background con una clase interior llamada biome-placeholder*/
+            .biome-placeholder{
+                transition: .5s ease opacity;
+                margin: 0 auto;
+                filter: contrast(0.5);
+                font-weight: bold;
+                font-size: 200%;
+                background-color: inherit; /* Utiliza el color de fondo del contenedor */
+                mix-blend-mode: difference; /* Invierte automáticamente el color del texto en relación con el fondo */
+            }        
+        }
+        
+        /*Dentro de el elemento ul con clase biome-list hay una clase biome que a su vez contiene una clase biome-info*/
+        .biome-info{
+            height: 0rem;
+            overflow-y: hidden;
+            transition: 1s ease height;    
+        }
+    }
+}
+
+@keyframes slow_display {
+    0%{
+        background-position-x: 0%;
+    }
+    50%{
+        background-position-x: 100%;
+    }
+    100%{
+        background-position-x: 0%;
+    }
+}

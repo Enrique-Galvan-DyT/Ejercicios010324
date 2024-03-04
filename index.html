@@ -4,13 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio de Rutas</title>
+    <link rel="stylesheet" href="/Ejercicios010324/public/css/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="public/css/init.css">
+    <script src="public/js/jquery/dist/jquery.min.js"></script>
 </head>
+
 <body>
     <div class="container">
         <p>
             Los siguientes elementos de la lista representan ejercicios a responder e identificar
         </p>
-        <ul class="lista-padre">
+        <ul class="lista-padre d-flex flex-column-reverse gap-3 d-none">
             <li>Agregar JQuery (debe estar en la carpeta js).</li>
             <li>Agregar Bootstrap (debe estar en la carpeta css).</li>
             <li>Crea una hoja de estilos que modifique el color de estos elementos de lista al pasar el mouse encima.</li>
@@ -28,11 +32,15 @@
             </li>
             <li>
                 <p>La siguiente imagen debe tener un ancho de automático y alto de 50px, no puedes usar hojas de estilos para modificar estos valores.</p>
-                <img src="#" alt="Aquí debe mostrarse una imagen">
+                <img src="public/media/logo.png" alt="Aquí debe mostrarse una imagen" height="50" width="auto">
             </li>
             <li>
                 Agrega bajo este texto (dentro del html) un div que incluya 2 div más, los div hijos deben estar ordenados horizontalmente.
                 <!--Tu html aquí-->
+                <div class="d-flex">
+                    <div>1</div>
+                    <div>2</div>
+                </div>
             </li>
             <li>
                 Todos los elementos de esta lista deben tener un margen, pero no puedes usar la propiedad "margin" o incluso "padding".
@@ -43,6 +51,34 @@
                 </li>
             </div>
         </ul>
+
+        <ul class="lista-ejercicios" style="list-style: none;">
+            <li>
+                <ul class="ejercicios-040324">
+                    <li>La lista con clase <mark>biome-list</mark> deberá ser dinámicamente llenada a partir de la información del objeto <mark>[biomes]</mark> ubicado en el archivo <mark>init.js</mark> con Javascript/JQuery.</li>
+                    <li>Sólo puedes añadir propiedades de estilos a partir de la clase declarada <mark>biome-list</mark> creada en <mark>init.css</mark>, no puedes salir de ella.</li>
+                    <li>Los elementos de la lista se ordenarán dinámicamente por columnas dependiendo el tamaño de la pantalla y los elementos, si la pantalla es reducida se limitarán a una sola columna, conforme la pantalla crezca podrán generar nuevas columnas dinámicamente ordenando los elementos a partir de su tamaño (No puedes usar <mark>mediaquery</mark> o <mark>grid</mark>).</li>
+                    <li>Los elementos de la lista deben tener un margen de separación sin usar la propiedad margin, aplicado tanto vertical como horizontalmente.</li>
+                    <li>Los elementos de la lista deberán tener un width mínimo de <mark>300px</mark>, un width máximo del <mark>100%</mark>, y un width fijo establecido al <mark>30%</mark> del tamaño vertical de la pantalla (No puedes usar las propiedades <mark>min-width</mark> y <mark>max-width</mark>).</li>
+                    <li>El nombre para el título del bioma debe obtenerse a partir del nombre de la imagen ubicado en el objeto <mark>[biomes]</mark> usando Javascript/JQuery.</li>
+                    <li>El nombre del título no puede tener guiones bajos.</li>
+                    <li>El nombre del título debe ser color <mark>darkslateblue</mark>.</li>
+                    <li>El nombre del título debe ser negrita.</li>
+                    <li>Al pasar el mouse por encima del elemento con clase <mark>biome</mark>, el elemento con clase <mark>biome-info</mark> deberá tener una altura de <mark>10rem</mark>, y el elemento con clase <mark>biome-placeholder</mark> tendrá un opacidad de <mark>0</mark>.</li>
+                    <li>El elemento con clase <mark>biome-background</mark> debe hacer uso de la animación <mark>slow_display</mark>, con duración de 60 segundos, repetido infinitamente y una transición lineal.</li>
+                    <li>El elemento <mark>summary</mark> debe tener un tamaño de fuente <mark>small</mark>.</li>
+                    <li>El elemento <mark>summary</mark> y la clase <mark>biome-name</mark> deben tener un margen de <mark>1rem</mark>.</li>
+                    <li>La descripción debe tener un padding vertical de <mark>1rem</mark>.</li>
+                    <li>La descripción del bioma debe obtenerse del objeto <mark>[biomes]</mark> usando Javascript/JQuery a partir del nombre de la imagen.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <ul class="biome-list">
+            
+        </ul>
+
+        <script src="public/js/init.js"></script>
     </div>
 </body>
 </html>
