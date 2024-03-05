@@ -15,31 +15,42 @@ const biomes = {
 }
 
 function showBiomes() {
+    //Declaramos el elemento de lista en una variable a partir de su clase
+    let biome_list = document.querySelector('.biome-list')
+    //Al tener el elemento dentro de la variable, vaciaremos el contenido del elemento en caso de tener una lista generada
+    biome_list.innerHTML = "";
+    //Un ciclo nos permitirá pasar de objeto en objeto dentro de nuestra variable biomes
     for (const biome in biomes) {
+        //Plantilla de la estructura de un elemento de lista con clases definidas dependiendo la información que contendrán dinámicamente
+        let biome_element = `<li class="biome">
+                                <div class="biome-background">
+                                    <h1 class="biome-placeholder"></h1>
+                                </div>
+                                <div class="biome-info">
+                                    <h1 class="biome-name"></h1>
+                                    <details open>
+                                        <summary>Description</summary>
+                                        <!--Summary es un texto breve que resume lo que pongas a continuación-->
+                                        <!--Summary sirve como un botón desplegable de manera natural-->
+                                        <div class="biome-description"></div>
+                                    </details>
+                                </div>
+                            </li>`
+
+        //Adjunto la plantilla a la lista
+        biome_list.innerHTML += biome_element;
+        //Tomo el último elemento de mi lista para modificar su fondo
+        biome_list.lastChild.querySelector('.biome-background').style.backgroundImage = 'url("/Ejercicios010324/public/media/biomes/' + biome + '.webp")'; 
+        //Tomo el último elemento de mi lista para modificar su clase biome-placeholder, reemplazaré los guines bajos por espacios
+        biome_list.lastChild.querySelector('.biome-placeholder').innerText = biome.split('_').join(' ');
+        //Tomo el último elemento de mi lista para modificar su clase biome-name, reemplazaré los guines bajos por espacios
+        biome_list.lastChild.querySelector('.biome-name').innerText = biome.split('_').join(' ');
+        //Tomo el último elemento de mi lista para modificar su clase biome-description, obtendré la descripción a partir del nombre de la imagen en el objeto 
+        biome_list.lastChild.querySelector('.biome-description').innerText = biomes[biome]; 
+        //Mostrar la información dinámicamente en consola 
         console.log(biome + ': ' + biomes[biome]);
     }
 }
-
-/*
-let biome_element = `<li class="biome">
-biome_list.innerHTML = //vacía el elemento;
-<div class="biome-background">
-biome_list.lastChild.querySelector('.biome-description').innerText = //Descripción del elemento a partir del objeto y nombre; 
-<h1 class="biome-placeholder"></h1>
-<div class="biome-info">
-<details open>
-let biome_list = //obten el elemento a partir de su clase
-</div>
-biome_list.lastChild.querySelector('.biome-background') //Adjuntar como fondo la imagen  = 'url("/Ejercicios010324/public/media/biomes/.webp")'; 
-<h1 class="biome-name"></h1>
-<summary>Description</summary>
-<!--Summary es un texto breve que resume lo que pongas a continuación-->
-<!--Summary sirve como un botón desplegable de manera natural-->
-<div class="biome-description"></div>
-</details>
-</div>
-</li>`
-*/
 
 
 //Al final del documento llamaré a la función para cargar la lista de elementos 

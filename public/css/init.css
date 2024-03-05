@@ -19,24 +19,35 @@ Agrega estilos restantes, no puedes salir de esta declaración para añadir más
 ul.biome-list{
     padding: 0;
     list-style: none;
-    
-    /*Dentro de el elemento ul con clase biome-list hay una clase biome*/
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
     .biome{
+        width: clamp(300px, 30vw, 100%);
         margin: auto;
         background-color: aliceblue;
         border: 2px solid lavender;
-        
-        /*Dentro de el elemento ul con clase biome-list hay una clase biome que a su vez contiene una clase biome-background*/
+        &:hover{
+            .biome-info{
+                height: 10rem;
+            }
+            .biome-placeholder{
+                opacity: 0;
+            }
+        }
+
         .biome-background{
             width: 100%;
             height: 10rem;
             background-repeat: no-repeat;
             background-position-y: 40%;
             background-size: inherit;  
+            animation-name: slow_display;
+            animation-duration: 60s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;  
             display: flex;
             align-items: center;
-
-            /*Dentro de el elemento ul con clase biome-list hay una clase biome que a su vez contiene una clase biome-background con una clase interior llamada biome-placeholder*/
             .biome-placeholder{
                 transition: .5s ease opacity;
                 margin: 0 auto;
@@ -48,11 +59,24 @@ ul.biome-list{
             }        
         }
         
-        /*Dentro de el elemento ul con clase biome-list hay una clase biome que a su vez contiene una clase biome-info*/
         .biome-info{
             height: 0rem;
             overflow-y: hidden;
             transition: 1s ease height;    
+            .biome-name, summary{
+                margin: 1rem;
+            }
+            .biome-name{
+                color: darkslateblue;
+                font-weight: bold;
+            }
+            summary{
+                color: lightslategray;
+                font-size: small;
+            }
+            .biome-description{
+                padding-inline: 1rem;
+            }
         }
     }
 }
